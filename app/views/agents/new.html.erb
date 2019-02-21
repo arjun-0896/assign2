@@ -1,10 +1,18 @@
 
 <%= render 'form' %>
 <br />
-<td><% if session[:user_id].nil? %></td>
-    <div class="btn btn-success topcorner2">
-      <%= link_to 'Back', root_url , :style =>'color:#FFFFFF;' %></div>
-  <% else %>
-    <div class="btn btn-success topcorner2">
-      <%= link_to 'Back',welcome_index_path, :style =>'color:#FFFFFF;' %></div>
-  <% end %>
+
+<% if session[:state] == 'admin' %>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<%else%>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/welcome/index' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<% end %>
+

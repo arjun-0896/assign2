@@ -1,5 +1,5 @@
-<h2 align="center">Bookings</h2>
-<%= form_for(@booking) do |f| %>
+<h2 align="center">Reviews</h2>
+<%= form_for(@review) do |f| %>
 
   <%#= f.hidden_field :customer_id, :value => 1 %>
   <%#= f.hidden_field :tour_id, :value => 1 %>
@@ -7,11 +7,11 @@
   <%#= f.hidden_field :customer_id, :value => session[:user_id]%>
   <%#= f.hidden_field :tour_id, :value => session[:user_id]%>
 
-  <% if @booking.errors.any? %>
+  <% if @review.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this member from being saved:</h2>
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this member from being saved:</h2>
       <ul>
-        <% @booking.errors.full_messages.each do |msg| %>
+        <% @review.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -29,13 +29,13 @@
   </div>
 
   <div class="field" align="center">
-    <%= f.label :bseats %><br />
-    <%= f.number_field :bseats %>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
   </div>
 
   <div class="field" align="center">
-    <%= f.label :email %><br />
-    <%= f.number_field :bwait_list %>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
   </div>
   <br />
   <div class="actions" align="center">

@@ -1,5 +1,18 @@
 <h1>Editing Details</h1>
 
 <%= render 'form_edit' %>
-<div class="btn btn-success">
-  <%= link_to 'Back', agent_path(@agents.id), method: :get, :style =>'color:#FFFFFF;' %></div>
+
+
+<% if session[:state] == 'admin' %>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/agents' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<%else%>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', agent_path(session[:member_id]) , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<% end %>

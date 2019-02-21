@@ -1,10 +1,7 @@
 <h1>Listing Customers</h1>
 
-<!--<div class="btn btn-success">-->
-<!--  <%#= link_to 'Profile/History', customer_path(session[:customer_id]), method: :get, :style =>'color:#FFFFFF;'  %></div>-->
+<% if session[:member_id]!=nil %>
 
-<div class="btn btn-success">
-  <%= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;'  %></div>
 
 
 
@@ -12,9 +9,13 @@
 
   <table>
     <tr>
-      <th>S. No.</th>
+      <th>S.No.</th>
       <th>Name</th>
-      <th>EMail ID</th>
+      <th>Email ID</th>
+      <% if session[:state] == 'admin' %>
+        <th>Edit Profile</th>
+        <th>Delete Profile</th>
+      <% end %>
     </tr>
 
     <% id=0 %>
@@ -23,6 +24,20 @@
         <td><%= id+=1 %></td>
         <td><%= customer.name %></td>
         <td><%= customer.email %></td>
+        <% if session[:state] == 'admin' %>
+
+          <td>
+            <div class="btn btn-success">
+              <%= link_to 'Edit', edit_customer_path(customer), :style =>'color:#FFFFFF;' %>
+            </div>
+          </td>
+          <td>
+            <div class="btn btn-success">
+              <%= link_to 'Delete', customer_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;' %>
+            </div>
+          </td>
+
+        <% end %>
       </tr>
     <%end %>
   </table>
@@ -30,9 +45,24 @@
 </div>
 
 
-<!--<div class="btn btn-success topcorner2">-->
-<!--  <%#= link_to 'Back', , :style =>'color:#FFFFFF;' %></div>-->
+<% if session[:state] == 'admin' %>
 
-<div class="btn btn-success topcorner">
-  <%= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
-</div>
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<%elsif session[:state] == 'customer'%>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/customeroptions' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<%elsif session[:state] == 'customer'%>
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/customeroptions' , :style =>'color:#FFFFFF;' %>
+  </div>
+
+<% end %>
+
+<% end %>

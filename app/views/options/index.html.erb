@@ -1,3 +1,5 @@
+
+<% if session[:state] == 'admin' %>
 <head>
   <div class="loginheader" align="center">
 <!--    <button class="btn-success"><%#= link_to 'Edit Profile','/sessions/new', :style => 'text-decoration: none;'%></button>-->
@@ -12,23 +14,16 @@
     <br>
     <button class="btn-success"><%= link_to 'List all tours', '/tours', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit Agent', '/agents/edit', :style =>'text-decoration: none;'%></button>
-    <br>
-    <button class="btn-success"><%= link_to 'Edit Customer', '/customers/edit', :style =>'text-decoration: none;'%></button>
-    <br>
     <button class="btn-success"><%= link_to 'Edit Tour', '/tours/edit', :style =>'text-decoration: none;'%></button>
-    <br>
-    <button class="btn-success"><%= link_to 'Delete Agent', '/agents/destroy', :style =>'text-decoration: none;'%></button>
-    <br>
-    <button class="btn-success"><%= link_to 'Delete Customer', '/customers/destroy', :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'Delete Tour', '/tours/destroy', :style =>'text-decoration: none;'%></button>
 
-
-
   </div>
 </head>
+
 <body>
 
 
 </body>
+
+<% end %>

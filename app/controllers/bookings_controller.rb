@@ -4,59 +4,59 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @bookings= Booking.new
+    @booking= Booking.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @bookings }
+      format.json { render json: @booking }
     end
   end
 
   def create
-    @bookings = Booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     # @cars = Car.all
     respond_to do |format|
-      if @bookings.save
-        # log_in @bookings
+      if @booking.save
+        # log_in @booking
         flash[:success] = "Welcome to the Tour management system!"
         format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Booking was successfully created.' }
-        format.json { render json: @bookings, status: :created, location: 'welcome/index' }
+        format.json { render json: @booking, status: :created, location: 'welcome/index' }
       else
-        flash.now[:notice] = "Invalid email/password combination"
+        flash.now[:notice] = "Invalid parameters"
         format.html { render action: "new" }
-        format.json { render json: @bookings.errors, status: :unprocessable_entity }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def show
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @bookings }
+      format.json { render json: @booking }
     end
   end
 
   def edit
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
 
     respond_to do |format|
-      if @bookings.update_attributes(booking_params)
+      if @booking.update_attributes(booking_params)
         format.html { redirect_to @bookings, notice: 'Booking was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @bookings.errors, status: :unprocessable_entity }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @bookings.destroy
+    @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url }
       format.json { head :no_content }

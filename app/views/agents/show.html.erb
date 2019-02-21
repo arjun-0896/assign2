@@ -2,15 +2,20 @@
 <h2>Profile</h2>
 <p>
   <b>Name:</b>
-  <%= @agents.name %>
+  <%= @agent.name %>
 </p>
 
 <p>
   <b>email:</b>
-  <%= @agents.email %>
+  <%= @agent.email %>
 </p>
 
-<!--<div class="btn btn-success">-->
-<!--  <%#= link_to 'Edit', edit_agent_path(@agents), :style =>'color:#FFFFFF;' %></div>-->
+<div class="btn btn-success topcorner2">
+  <%= link_to 'Back', '/agentoptions' , :style =>'color:#FFFFFF;' %>
+</div>
 
-<!--  <%#= link_to 'Home', cars_url, :style =>'color:#FFFFFF;'%></div>-->
+<div class="btn btn-success ">
+  <%= link_to 'Edit Profile', edit_agent_path(@agent) , :style =>'color:#FFFFFF;' %>
+</div>
+
+

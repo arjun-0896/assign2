@@ -1,6 +1,8 @@
+<% if session[:state] == 'admin' || session[:state] == 'agent' %>
+
 <head>
   <div class="loginheader" align="center">
-    <button class="btn-success"><%= link_to 'Edit Profile','/welcome/index', :style => 'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Show Profile',agent_path(session[:member_id]), :style => 'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'List a Tour', '/welcome/index', :style =>'text-decoration: none;'%></button>
     <br>
@@ -20,7 +22,9 @@
     <br>
     <button class="btn-success"><%= link_to 'View reviews of a tour', '/welcome/index', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Delete your account', '/welcome/index', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Delete your account',agent_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
+    <br>
+    <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
 
   </div>
 </head>
@@ -28,3 +32,5 @@
 
 
 </body>
+
+<% end %>

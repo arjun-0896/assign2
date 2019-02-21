@@ -1,37 +1,68 @@
 <h1>Listing Agents</h1>
 
-<!--<div class="btn btn-success">-->
-<!--  <%#= link_to 'Profile/History', agent_path(session[:agent_id]), method: :get, :style =>'color:#FFFFFF;'  %></div>-->
-
-<!--<div class="btn btn-success">-->
-<!--  <%#= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;'  %></div>-->
+<% if session[:member_id]!=nil %>
 
 
-<div class = "padding">
 
-  <table>
-    <tr>
-      <th>S.No.</th>
-      <th>Name</th>
-      <th>Email ID</th>
-    </tr>
 
-    <% id=0 %>
-    <% @agents.each do |agent| %>
+  <div class = "padding">
+
+    <table>
       <tr>
-        <td><%= id+=1 %></td>
-        <td><%= agent.name %></td>
-        <td><%= agent.email %></td>
+        <th>S.No.</th>
+        <th>Name</th>
+        <th>Email ID</th>
+        <% if session[:state] == 'admin' %>
+          <th>Edit Profile</th>
+          <th>Delete Profile</th>
+        <% end %>
       </tr>
-    <%end %>
-  </table>
 
-</div>
+      <% id=0 %>
+      <% @agents.each do |agent| %>
+        <tr>
+          <td><%= id+=1 %></td>
+          <td><%= agent.name %></td>
+          <td><%= agent.email %></td>
+          <% if session[:state] == 'admin' %>
+
+            <td>
+              <div class="btn btn-success">
+                <%= link_to 'Edit', edit_agent_path(agent), :style =>'color:#FFFFFF;' %>
+              </div>
+            </td>
+            <td>
+              <div class="btn btn-success">
+                <%= link_to 'Delete', agent_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;' %>
+            </div>
+            </td>
+
+          <% end %>
+        </tr>
+      <%end %>
+    </table>
+
+  </div>
 
 
-<!--<div class="btn btn-success topcorner2">-->
-<!--  <%#= link_to 'Back', , :style =>'color:#FFFFFF;' %></div>-->
+  <% if session[:state] == 'admin' %>
 
-<div class="btn btn-success topcorner">
-  <%= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
-</div>
+    <div class="btn btn-success topcorner2">
+      <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+    </div>
+
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success topcorner2">
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#FFFFFF;' %>
+    </div>
+
+  <%elsif session[:state] == 'customer'%>
+
+    <div class="btn btn-success topcorner2">
+      <%= link_to 'Back', '/customeroptions' , :style =>'color:#FFFFFF;' %>
+    </div>
+
+  <% end %>
+
+<% end %>

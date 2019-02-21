@@ -1,12 +1,12 @@
 
 
   <h2 align="center">Sign up</h2>
-  <%= form_for(@customers) do |f| %>
-    <% if @customers.errors.any? %>
+  <%= form_for(@customer) do |f| %>
+    <% if @customer.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@customers.errors.count, "error") %> prohibited this member from being saved:</h2>
+        <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this member from being saved:</h2>
         <ul>
-          <% @customers.errors.full_messages.each do |msg| %>
+          <% @customer.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul>

@@ -1,6 +1,6 @@
 
 <h2 align="center">Tour Details</h2>
-<%= form_for(@tours) do |f| %>
+<%= form_for(@tour) do |f| %>
 
 
   <div class="field" align="center">
@@ -75,7 +75,7 @@
   </div>
   <br>
 
-  <% if @tours.errors.any? %>
+  <% if @tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 

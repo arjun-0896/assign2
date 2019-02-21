@@ -1,5 +1,7 @@
 class Tour < ApplicationRecord
   belongs_to :agent
+  has_many :reviews
+  has_many :bookings
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :description, presence: true

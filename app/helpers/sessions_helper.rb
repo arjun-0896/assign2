@@ -9,4 +9,5 @@ module SessionsHelper
     @current_user = nil
     reset_session
   end
+
 end
