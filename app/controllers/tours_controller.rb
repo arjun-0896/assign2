@@ -82,7 +82,7 @@ class ToursController < ApplicationController
 
   def tours_params
     params.fetch(:tour, {})
-    params.require(:tour).permit(:id, :name, :price, :description, :booking_deadline, :from_date, :to_date, :start_location, :operator_contact, :status)
+    params.require(:tour).permit(:id, :name, :price, :description, :booking_deadline, :from_date, :to_date, :start_location, :operator_contact, :seats, :status)
 end
   def show
     @tours = Tour.find(params[:id])
