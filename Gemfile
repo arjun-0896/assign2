@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 
 gem "paperclip", "~> 5.0.0"
 

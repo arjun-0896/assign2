@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Rails assign2: development" uuid="4b324136-578d-4a5c-ab11-d0238874b084">
+    <data-source source="LOCAL" name="Rails assign2: development" uuid="756a7a35-a686-43aa-924c-b2f97e7bebbb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -9,7 +9,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/assign2_development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails assign2: production" uuid="37e4474a-65b3-4254-9e08-6ef2ec25ca4b">
+    <data-source source="LOCAL" name="Rails assign2: production" uuid="c242d102-1183-479f-ac88-473e6c1da1cb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -17,7 +17,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/assign2_production</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails assign2: test" uuid="c868255d-432e-497b-9a10-55385f2feff1">
+    <data-source source="LOCAL" name="Rails assign2: test" uuid="ad4a8016-7699-43bd-ac98-3e28387a1f08">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

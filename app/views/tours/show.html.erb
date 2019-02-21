@@ -1,2 +1,45 @@
+<%= form_with(model: @tours, local: true) %>
 <h1>Tours#show</h1>
 <p>Find me in app/views/tours/show.html.erb</p>
+
+<h2>Tour Details</h2>
+<p>
+  <b>Name:</b>
+  <%= @tours.id %>
+</p>
+
+<p>
+  <b>email:</b>
+  <%= @tours.name %>
+</p>
+
+<h2>Profile</h2>
+<p>
+  <b>Name:</b>
+  <%= @tours.description %>
+</p>
+
+<p>
+  <b>email:</b>
+  <%= @tours.price %>
+</p>
+<h2>Profile</h2>
+<p>
+  <b>Name:</b>
+  <%= @tours.from_date %>
+</p>
+
+<p>
+  <b>email:</b>
+  <%= @tours.to_date %>
+</p>
+<h2>Profile</h2>
+<p>
+  <b>Name:</b>
+  <%= @tours.start_location %>
+</p>
+
+<p>
+  <b>email:</b>
+  <%= @tours.seats %>
+</p>

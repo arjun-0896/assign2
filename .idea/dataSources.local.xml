@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails assign2: development" uuid="4b324136-578d-4a5c-ab11-d0238874b084">
-      <database-info product="PostgreSQL" version="11.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" dbms="POSTGRES" exact-version="11.0" exact-driver-version="42.2">
+    <data-source name="Rails assign2: development" uuid="756a7a35-a686-43aa-924c-b2f97e7bebbb">
+      <database-info product="PostgreSQL" version="11.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" dbms="POSTGRES" exact-version="11.2" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>arjunsm</user-name>
-      <introspection-schemas>@:@|assign2_development:</introspection-schemas>
-    </data-source>
-    <data-source name="Rails assign2: production" uuid="37e4474a-65b3-4254-9e08-6ef2ec25ca4b">
-      <database-info product="PostgreSQL" version="11.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" dbms="POSTGRES" exact-version="11.0" exact-driver-version="42.2">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>arjunsm</user-name>
+      <user-name>shraddhabhadauria</user-name>
       <introspection-schemas>@:@</introspection-schemas>
     </data-source>
-    <data-source name="Rails assign2: test" uuid="c868255d-432e-497b-9a10-55385f2feff1">
-      <database-info product="PostgreSQL" version="11.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" dbms="POSTGRES" exact-version="11.0" exact-driver-version="42.2">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>arjunsm</user-name>
-      <introspection-schemas>@:@</introspection-schemas>
+    <data-source name="Rails assign2: production" uuid="c242d102-1183-479f-ac88-473e6c1da1cb">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>shraddhabhadauria</user-name>
+    </data-source>
+    <data-source name="Rails assign2: test" uuid="ad4a8016-7699-43bd-ac98-3e28387a1f08">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>shraddhabhadauria</user-name>
     </data-source>
   </component>
 </project>
