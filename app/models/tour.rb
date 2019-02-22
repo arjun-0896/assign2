@@ -3,6 +3,7 @@ class Tour < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :description, presence: true

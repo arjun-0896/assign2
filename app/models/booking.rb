@@ -4,6 +4,6 @@ class Booking < ApplicationRecord
 
   validates :bseats, presence: true, numericality: true
   validates :bwait_list, presence: true, numericality: true
-  validates :customer, presence: true
-  validates :tour, presence: true
+  validates :customer_id, presence: true
+  validates :tour_id, presence: true
 end

@@ -54,6 +54,34 @@ class ToursController < ApplicationController
     end
   end
 
+  def seats_update
+    @tour = Tour.find(params[:id])
+
+    respond_to do |format|
+      if @tour.update_attributes(tour_params)
+        format.html { redirect_to '/tours', notice: 'Tour was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @tours.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def waitlist_update
+    @tour = Tour.find(params[:id])
+
+    respond_to do |format|
+      if @tour.update_attributes(tour_params)
+        format.html { redirect_to '/tours', notice: 'Tour was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @tours.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @tour = Tour.find(params[:id])
     if @tour.destroy

@@ -63,12 +63,15 @@ td {
 
 .btn-success{
 
+  background-color:transparent;
+
     color: black;
     border-color: black;
     margin: 5px;
 }
 
 .btn-success:hover{
+  background-color:transparent;
     text-decoration: underline;
     border-color: black;
 }

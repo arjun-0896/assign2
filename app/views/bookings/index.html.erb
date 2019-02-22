@@ -1,37 +1,47 @@
-<div class="btn btn-success">
-  <%= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;'  %></div>
 
+<% if session[:state] == 'admin' || session[:state] == 'customer' %>
+  <div class = "padding">
 
-
-<div class = "padding">
-
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Customer id</th>
-      <th>Tour id</th>
-      <th>Booked seats</th>
-      <th>Booked waitlist</th>
-    </tr>
-
-    <% id=0 %>
-    <% @bookings.each do |booking| %>
+    <table>
       <tr>
-        <td><%= id+=1 %></td>
-        <td><%= booking.customer_id %></td>
-        <td><%= booking.tour_id %></td>
-        <td><%= booking.bseats %></td>
-        <td><%= booking.waitlist %></td>
+        <th>S.No</th>
+        <th>Customer id</th>
+        <th>Tour id</th>
+        <th>Booked seats</th>
+        <th>Booked waitlist</th>
+        <th>Edit Booking</th>
+        <th>Delete Booking</th>
       </tr>
-    <%end %>
-  </table>
 
-</div>
+      <% id=0 %>
+      <% @bookings.each do |booking| %>
+        <% if session[:member_id] == booking.customer_id %>
+           <tr>
+            <td><%= id+=1 %></td>
+            <td><%= booking.customer_id %></td>
+            <td><%= booking.tour_id %></td>
+            <td><%= booking.bseats %></td>
+            <td><%= booking.waitlist %></td>
+            <td>
+             <div class="btn btn-success">
+               <%= link_to 'Edit', edit_booking_path(booking), :style =>'color:#FFFFFF;' %>
+             </div>
+            </td>
+            <td>
+             <div class="btn btn-success">
+               <%= link_to 'Delete', booking_path(booking), method: :delete, :style =>'color:#FFFFFF;' %>
+             </div>
+            </td>
+           </tr>
+        <% end %>
+      <%end %>
+    </table>
+
+  </div>
 
 
-<!--<div class="btn btn-success topcorner2">-->
-<!--  <%#= link_to 'Back', , :style =>'color:#FFFFFF;' %></div>-->
 
-<div class="btn btn-success topcorner">
-  <%= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
-</div>
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back', '/customeroptions', :style =>'color:#FFFFFF;'%>
+  </div>
+<% end %>

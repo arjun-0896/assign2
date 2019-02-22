@@ -1,2 +1,11 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1>Booking Details</h1>
+
+<% if session[:state] == 'admin' || session[:state] == 'customer' %>
+  <%= render 'form_edit' %>
+  <br />
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back','/bookings', :style =>'color:#FFFFFF;' %>
+  </div>
+
+<% end %>
