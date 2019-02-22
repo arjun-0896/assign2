@@ -28,30 +28,30 @@ class SessionsController < ApplicationController
     end
 
     if params[:session][:state].downcase == "agent"
-       user = Agent.find_by(email: params[:session][:email].downcase)
-       if user && user.password == params[:session][:password]
-         session[:member_id] = user.id
-         session[:email]= user.password
-         session[:state] = params[:session][:state].downcase
-         redirect_to :controller => 'agentoptions', :action => 'index'
-       else
-         flash.now[:notice] = "Invalid email/password combination"
-         render 'new'
-       end
+      user = Agent.find_by(email: params[:session][:email].downcase)
+      if user && user.password == params[:session][:password]
+        session[:member_id] = user.id
+        session[:email]= user.email
+        session[:state] = params[:session][:state].downcase
+        redirect_to :controller => 'agentoptions', :action => 'index'
+      else
+        flash.now[:notice] = "Invalid email/password combination"
+        render 'new'
+      end
     end
 
 
     if params[:session][:state].downcase == "customer"
-       user = Customer.find_by(email: params[:session][:email].downcase)
-       if user && user.password == params[:session][:password]
-         session[:member_id] = user.id
-         session[:email]= user.password
-         session[:state] = params[:session][:state].downcase
-         redirect_to :controller => 'customeroptions', :action => 'index'
-       else
-         flash.now[:notice] = "Invalid email/password combination"
-         render 'new'
-       end
+      user = Customer.find_by(email: params[:session][:email].downcase)
+      if user && user.password == params[:session][:password]
+        session[:member_id] = user.id
+        session[:email]= user.email
+        session[:state] = params[:session][:state].downcase
+        redirect_to :controller => 'customeroptions', :action => 'index'
+      else
+        flash.now[:notice] = "Invalid email/password combination"
+        render 'new'
+      end
     end
   end
 
@@ -65,5 +65,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session.delete(:user_id)
+    reset_session
+    redirect_to root_url
   end
 end

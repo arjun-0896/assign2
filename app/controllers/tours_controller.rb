@@ -17,6 +17,7 @@ class ToursController < ApplicationController
   def create
     @tours = Tour.new(tours_params)
     #@tours.id =
+
     respond_to do |format|
       if @tours.save
         # format.html { redirect_to @tours, notice: 'Tour was successfully created.' }
