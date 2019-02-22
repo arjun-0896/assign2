@@ -2,26 +2,32 @@
 
 <head>
   <div class="loginheader" align="center">
+
     <button class="btn-success"><%= link_to 'Show Profile',agent_path(session[:member_id]), :style => 'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'Add a Tour', '/tours/new', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit your Tours', '/welcome/index', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'View all tours', '/tours', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Update your Tours', '/welcome/index', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Update/Delete your Tours', '/tours/tour_options', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Delete your Tours', '/welcome/index', :style =>'text-decoration: none;'%></button>
+
+    <button class="btn-success"><%= link_to 'Add a Picture', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View all tours', '/welcome/index', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'View all pictures', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Upload and delete pictures of your tours', '/welcome/index', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Update/Delete your pictures', '/tours/tour_options', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View list of all customers who have bookmarked a tour', '/welcome/index', :style =>'text-decoration: none;'%></button>
+
+    <button class="btn-success"><%= link_to 'View bookmarks your tours', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View list of all customers who have booked a tour', '/welcome/index', :style =>'text-decoration: none;'%></button>
+
+    <button class="btn-success"><%= link_to 'View bookings your tours', '/bookings', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View reviews of a tour', '/welcome/index', :style =>'text-decoration: none;'%></button>
+
+    <button class="btn-success"><%= link_to 'View reviews of your tour', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
+
     <button class="btn-success"><%= link_to 'Delete your account',agent_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>

@@ -1,0 +1,54 @@
+<h1>Tour Options</h1>
+
+<% if session[:state] == 'admin' || session[:state] == 'agent' %>
+
+  <div class = "padding">
+
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Edit Tour</th>
+        <th>Delete Tour</th>
+
+      </tr>
+
+      <% id=0 %>
+      <% @tours.each do |tour| %>
+        <% if session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id] == tour.agent_id) %>
+        <tr>
+          <td><%= id+=1 %></td>
+          <td><%= tour.name %></td>
+          <td>
+            <div class="btn btn-success">
+              <%= link_to 'Edit', edit_tour_path(tour), :style =>'color:#FFFFFF;' %>
+            </div>
+          </td>
+          <td>
+            <div class="btn btn-success">
+              <%= link_to 'Delete', tour_path(tour), method: :delete, :style =>'color:#FFFFFF;' %>
+            </div>
+          </td>
+        </tr>
+          <% end %>
+      <%end %>
+    </table>
+
+  </div>
+
+
+  <% if session[:state] == 'admin' %>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+    </div>
+
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#FFFFFF;' %>
+    </div>
+
+  <% end %>
+
+<% end %>

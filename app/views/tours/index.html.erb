@@ -20,10 +20,6 @@
         <th>Waitlist</th>
         <th>Status</th>
         <th>Photos</th>
-        <% if session[:state] == 'admin' || session[:state] == 'agent' %>
-          <th>Edit Tour</th>
-          <th>Delete Tour</th>
-        <% end %>
       </tr>
 
       <% id=0 %>
@@ -48,23 +44,6 @@
               <%= link_to 'View photos', '/tours', method: :delete, :style =>'color:#FFFFFF;' %>
             </div>
           </td>
-
-
-
-          <% if session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id] == tour.agent_id) %>
-
-            <td>
-              <div class="btn btn-success">
-                <%= link_to 'Edit', edit_tour_path(tour), :style =>'color:#FFFFFF;' %>
-              </div>
-            </td>
-            <td>
-              <div class="btn btn-success">
-                <%= link_to 'Delete', tour_path(tour), method: :delete, :style =>'color:#FFFFFF;' %>
-              </div>
-            </td>
-
-          <% end %>
         </tr>
       <%end %>
     </table>

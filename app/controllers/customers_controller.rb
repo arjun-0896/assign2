@@ -17,10 +17,13 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        # log_in @customers
-        flash[:success] = "Welcome to the Tour management system!"
-        format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Customer was successfully created.' }
-        format.json { render json: @customer, status: :created, location: 'welcome/index' }
+        if session[:state] == 'admin'
+          format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Customer was successfully created.' }
+          format.json { render json: @customer, status: :created, location: @customer }
+        else
+          format.html { redirect_to '/options', notice: 'Agent was successfully created.' }
+          format.json { render json: @customer, status: :created, location: @customer }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @customer.errors, status: :unprocessable_entity }

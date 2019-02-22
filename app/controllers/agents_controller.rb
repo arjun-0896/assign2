@@ -18,8 +18,13 @@ class AgentsController < ApplicationController
       if @agent.save
         # log_in @agent
         flash[:success] = "Welcome to the Tour management system!"
-        format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Agent was successfully created.' }
+        if session[:state] == 'admin'
+          format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Agent was successfully created.' }
         # format.json { render json: @agent, status: :created, location: @agent }
+        else
+          format.html { redirect_to '/options', notice: 'Agent was successfully created.' }
+        # format.json { render json: @agent, status: :created, location: @agent }
+        end
       else
         flash.now[:notice] = "Invalid parameters"
         format.html { render action: "new" }

@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
     @bookings=Booking.all
   end
 
+  def booking_options
+    @bookings=Booking.all
+  end
+
   def new
     @booking= Booking.new
 
@@ -17,8 +21,6 @@ class BookingsController < ApplicationController
     # @cars = Car.all
     respond_to do |format|
       if @booking.save
-        # log_in @booking
-        flash[:success] = "Welcome to the Tour management system!"
         format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Booking was successfully created.' }
         format.json { render json: @booking, status: :created, location: 'welcome/index' }
       else

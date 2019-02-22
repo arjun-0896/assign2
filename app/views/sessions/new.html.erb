@@ -10,7 +10,7 @@
     <%= f.password_field :password %><br><br>
 
     <%= f.label :state %><br>
-    <%= f.text_field :state %><br><br>
+    <%= f.select(:state, ["admin","customer","agent"]) %><br><br>
 
     <%= f.submit "Log in"%><br>
   <% end %>

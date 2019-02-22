@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
       render 'new'
     end
 
-
+    ency_pass = BCrypt::Password.create("team")
 
     if params[:session][:state].downcase == "admin"
-      if params[:session][:email].downcase == "admin@ncsu.edu" && params[:session][:password] == "team"
+      if params[:session][:email].downcase == "admin@ncsu.edu" && BCrypt::Password.new(ency_pass) == params[:session][:password]
         session[:member_id] = 1
         session[:email]="admin@ncsu.edu"
         session[:state] = params[:session][:state].downcase
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
     if params[:session][:state].downcase == "agent"
        user = Agent.find_by(email: params[:session][:email].downcase)
-       if user && user.password == params[:session][:password]
+       if user && user.authenticate(params[:session][:password])
          session[:member_id] = user.id
          session[:email]= user.email
          session[:state] = params[:session][:state].downcase
@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
 
     if params[:session][:state].downcase == "customer"
        user = Customer.find_by(email: params[:session][:email].downcase)
-       if user && user.password == params[:session][:password]
+       if user && user.authenticate(params[:session][:password])
          session[:member_id] = user.id
          session[:email]= user.email
          session[:state] = params[:session][:state].downcase

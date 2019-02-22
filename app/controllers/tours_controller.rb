@@ -3,6 +3,10 @@ class ToursController < ApplicationController
     @tours=Tour.all
   end
 
+  def tour_options
+    @tours=Tour.all
+  end
+
   def new
     @tour= Tour.new
 
