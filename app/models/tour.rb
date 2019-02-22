@@ -13,6 +13,8 @@ class Tour < ApplicationRecord
   validate :valid_end_date, on: :create, on: :update
   validates :start_location, presence: true
   validates :contact_agent, presence: true
+  validates :seats, presence: true, numericality: true
+  validates :wait_list, presence: true, numericality: true
   validates :status, presence:true, inclusion: { in: %w(InFuture Completed Cancelled)}
   validates :agent_id, presence: true
 

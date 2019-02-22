@@ -57,9 +57,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    respond_to do |format|
-      format.html { redirect_to bookings_url }
-      format.json { head :no_content }
+    if @booking.destroy
+      flash[:notice] = "Successfully deleted tour!"
+      redirect_to '/bookings'
+    else
+      flash[:alert] = "Error deleting tour!"
     end
   end
 

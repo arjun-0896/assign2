@@ -59,7 +59,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.update_attributes(tour_params)
-        format.html { redirect_to '/tours', notice: 'Tour was successfully updated.' }
+        format.html { redirect_to :controller => 'agentoptions', :action => 'waitlist_update', notice: 'Tour was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -85,7 +85,6 @@ class ToursController < ApplicationController
   def destroy
     @tour = Tour.find(params[:id])
     if @tour.destroy
-
       flash[:notice] = "Successfully deleted tour!"
         redirect_to '/tours'
     else
