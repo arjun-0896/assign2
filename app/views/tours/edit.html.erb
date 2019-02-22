@@ -1,2 +1,11 @@
-<h1>Tours#edit</h1>
-<p>Find me in app/views/tours/edit.html.erb</p>
+<h1>Tour Details</h1>
+
+<% if session[:state] == 'admin' || session[:state] == 'agent' %>
+  <%= render 'form_edit' %>
+  <br />
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back','/tours', :style =>'color:#FFFFFF;' %>
+  </div>
+
+<% end %>

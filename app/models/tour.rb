@@ -1,18 +1,19 @@
 class Tour < ApplicationRecord
   belongs_to :agent
-  has_many :reviews
-  has_many :bookings
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :description, presence: true
-  validates :photos, presence: true
   validates :price, presence: true, numericality: true
-  validates :booking_date_validity, on: :create, on: :update
-  validates :valid_start_date, on: :create, on: :update
-  validates :valid_end_date, on: :create, on: :update
+  validate :booking_date_validity, on: :create, on: :update
+  validate :valid_start_date, on: :create, on: :update
+  validate :valid_end_date, on: :create, on: :update
   validates :start_location, presence: true
   validates :contact_agent, presence: true
   validates :status, presence:true, inclusion: { in: %w(InFuture Completed Cancelled)}
+  validates :agent_id, presence: true
 
   def booking_date_validity
     if (:booking_deadline.present? && :booking_deadline < Date.today)

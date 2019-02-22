@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
        user = Agent.find_by(email: params[:session][:email].downcase)
        if user && user.password == params[:session][:password]
          session[:member_id] = user.id
-         session[:email]= user.password
+         session[:email]= user.email
          session[:state] = params[:session][:state].downcase
          redirect_to :controller => 'agentoptions', :action => 'index'
        else
@@ -45,7 +45,7 @@ class SessionsController < ApplicationController
        user = Customer.find_by(email: params[:session][:email].downcase)
        if user && user.password == params[:session][:password]
          session[:member_id] = user.id
-         session[:email]= user.password
+         session[:email]= user.email
          session[:state] = params[:session][:state].downcase
          redirect_to :controller => 'customeroptions', :action => 'index'
        else

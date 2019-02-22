@@ -2,7 +2,6 @@
 <h2 align="center">Tour Details</h2>
 <%= form_for(@tour) do |f| %>
 
-  <%= f.hidden_field :agent_id, :value => session[:member_id]%>
 
   <div class="field" align="center">
     <%= f.label "Name" %><br />
@@ -36,7 +35,7 @@
 
   <div class="field" align="center">
     <%= f.label "To Date" %><br />
-    <%= f.date_field :to_date %>
+    <%= f.date_field :to_date, class= 'form-control' %>
   </div>
   <br>
 
@@ -76,13 +75,14 @@
   </div>
   <br>
 
+  <%= f.hidden_field :agent_id, :value => session[:member_id]%>
 
   <% if @tour.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this property from being saved:</h2>
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
       <ul>
-        <% @tour.errors.full_messages.each do |message| %>
+        <% property.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -91,7 +91,7 @@
 
   <br />
   <div class="actions" align="center">
-    <%= f.submit "Book" %>
+    <%= f.submit "Update" %>
   </div>
 
 

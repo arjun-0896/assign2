@@ -14,9 +14,8 @@
     <br>
     <button class="btn-success"><%= link_to 'List all tours', '/tours', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit Tour', '/tours/edit', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Delete Tour', '/tours/destroy', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
 
   </div>
 </head>

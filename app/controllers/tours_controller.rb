@@ -14,17 +14,16 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tour_params)
-
     respond_to do |format|
       if @tour.save
-        # log_in @tours
+        # log_in @tour
         flash[:success] = "Welcome to the Tour management system!"
-        format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Tour was successfully created.' }
-        format.json { render json: @tour, status: :created, location: 'welcome/index' }
+        format.html { redirect_to :controller => 'agentoptions', :action => 'index', notice: 'Tour was successfully created.' }
+        # format.json { render json: @tour, status: :created, location: @tour }
       else
         flash.now[:notice] = "Invalid parameters"
         format.html { render action: "new" }
-        format.json { render json: @tour.errors, status: :unprocessable_entity }
+        # format.json { render json: @tour.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +45,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.update_attributes(tour_params)
-        format.html { redirect_to @tours, notice: 'Tour was successfully updated.' }
+        format.html { redirect_to '/tours', notice: 'Tour was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -58,14 +57,15 @@ class ToursController < ApplicationController
   def destroy
     @tour = Tour.find(params[:id])
     if @tour.destroy
+
       flash[:notice] = "Successfully deleted tour!"
-      redirect_to root_path
+        redirect_to '/tours'
     else
       flash[:alert] = "Error deleting tour!"
     end
   end
 
   def tour_params
-    params.require(:tour).permit(:customer_id, :tour_id, :bseats, :bwait_list)
+    params.require(:tour).permit(:agent_id, :name, :description, :price, :booking_deadline, :from_date, :to_date, :start_location, :itinerary, :contact_agent, :seats, :wait_list, :status)
   end
 end
