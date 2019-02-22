@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c97bcc1a-6490-4e19-bb1d-bc0e93ff6c51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/assign2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assign2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/756a7a35-a686-43aa-924c-b2f97e7bebbb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/756a7a35-a686-43aa-924c-b2f97e7bebbb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tours_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tours_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/customeroptions/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/customeroptions/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tours/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tours/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -92,7 +83,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tours_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="326">
@@ -132,11 +123,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="75" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="75" />
+            <state relative-caret-position="180">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -218,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/agents/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/customers/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
@@ -269,6 +259,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/customeroptions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/tours_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
       </list>
     </option>
   </component>
@@ -301,7 +292,14 @@
               <item name="assign2" type="b2602c69:ProjectViewProjectNode" />
               <item name="assign2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assign2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assign2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="sessions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="assign2" type="b2602c69:ProjectViewProjectNode" />
@@ -456,12 +454,12 @@
       <workItem from="1550731385395" duration="4245000" />
       <workItem from="1550736327957" duration="121000" />
       <workItem from="1550776571720" duration="8207000" />
-      <workItem from="1550798406818" duration="179000" />
+      <workItem from="1550798406818" duration="603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43596000" />
+    <option name="totallyTimeSpent" value="44020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -490,7 +488,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" weight="0.23012048" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.24457832" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.24457832" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50214595" side_tool="true" weight="0.24457832" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32891566" />
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32891566" />
@@ -720,13 +718,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/sessions/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="75" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -776,6 +767,13 @@
           <folding>
             <element signature="e#88#234#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
         </state>
       </provider>
     </entry>
