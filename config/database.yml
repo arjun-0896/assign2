@@ -95,13 +95,16 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
+ # adapter: postgresql
   encoding: unicode
-  database: assign2_production
-  pool: 5
+ # database: assign2_production
+  #pool: 5
   username: shraddhabhadauria
   password:
   host: localhost
   port: 5432
 
-
+adapter: postgresql
+database: production_db
+pool: 5
+timeout: 5000

@@ -19,7 +19,8 @@ class ToursController < ApplicationController
     #@tours.id =
     respond_to do |format|
       if @tours.save
-        format.html { redirect_to @tours, notice: 'Tour was successfully created.' }
+        # format.html { redirect_to @tours, notice: 'Tour was successfully created.' }
+        format.html {redirect_to :controller => 'tours', :action => 'index', notice: 'Tours created successfully'}
         format.json { render :show, status: :created, location: @tours }
       else
         format.html { render :new }

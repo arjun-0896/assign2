@@ -2,14 +2,11 @@
 <h1>Tours#index</h1>
 <p>Find me in app/views/tours/index.html.erb</p>
 
-<div class="btn btn-success">
-  <%= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;'  %></div>
-
 <div class = "padding">
 
-  <table>
-    <tr>
 
+  <table style="width:80%">
+    <tr>
       <th>S.No.</th>
       <th>Tour Id</th>
       <th>Tour Name</th>
@@ -18,34 +15,33 @@
 
     <% id=0 %>
     <% @tours.each do |tour| %>
-      <tr>
-        <td><%= id+=1 %></td>
-        <td><%= tour.__id__ %></td>
-        <td><%= tour.name %></td>
-        <td><%= tour.description %></td>
-      </tr>
-      </table>
-      </div>
+       <tr>
+         <td><%= id+=1 %></td>
+          <td><%= tour.__id__ %></td>
+          <td><%= tour.name %></td>
+          <td><%= tour.description %></td><br/>
+       </tr>
+    <%end %>
+   </table>
+</div>
 
 
-<!--<div class="btn btn-success topcorner2">-->
-<!--  <%#= link_to 'Back', , :style =>'color:#FFFFFF;' %></div>-->
+<div class="btn-success topcorner2">
+  <%= link_to 'Back', new_tour_path , :style =>'text-decoration: none;' %></div>
 
-<div class="btn btn-success topcorner">
-  <%= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
+<div class=" btn-success topcorner3">
+  <%= link_to 'Home', 'welcome/index', :style =>'text-decoration: none;' %>
 
 </div>
 
 
-<div class="actions" align="center">
+<div class="actions topcorner4">
   <%= link_to 'New Tour',  new_tour_path%>
 </div>
+<div class="btn-success  topcorner5">
+<%= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'  %></div>
 
-        <div class="btn btn-success">
-          <%= link_to 'Log Out', logout_path(session[:member_id]), method: :delete, :style =>'color:#FFFFFF;'  %></div>
-
-
-        <div class = "padding">
+     <!--   <div class = "padding">
 
           <table>
             <tr>
@@ -54,25 +50,16 @@
               <th>EMail ID</th>
             </tr>
 
-            <% id=0 %>
-            <% bookings.each do |booking| %>
-              <tr>
-                <td><%= id+=1 %></td>
-                <td><%= booking.bseats %></td>
-                <td><%= booking.waitlist %></td>
-                <td><%= booking.bseats %></td>
-                <td><%= booking.waitlist %></td>
-              </tr>
-            <%end %>
+
           </table>
 
         </div>
 
-
+-->
         <!--<div class="btn btn-success topcorner2">-->
         <!--  <%#= link_to 'Back', , :style =>'color:#FFFFFF;' %></div>-->
 
-      <div class="btn btn-success topcorner">
-        <%= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
-    <%end %>
-      </div>
+<!--      <div class="btn btn-success topcorner">-->
+        <%#= link_to 'Home', 'welcome/index', :style =>'color:#FFFFFF;'%>
+
+<!--      </div>-->
