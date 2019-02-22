@@ -138,8 +138,8 @@ sequence|table|24737|24739|1
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-02-21.16:55:20.591</IntrospectionTimestamp>
-      <IntrospectionStateNumber>592</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-02-21.23:35:11.454</IntrospectionTimestamp>
+      <IntrospectionStateNumber>619</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -258,7 +258,7 @@ sequence|table|24737|24739|1
     <table id="38" parent="23" name="agents">
       <ObjectId>24671</ObjectId>
       <Owner>shraddhabhadauria</Owner>
-      <StateNumber>585</StateNumber>
+      <StateNumber>618</StateNumber>
     </table>
     <table id="39" parent="23" name="ar_internal_metadata">
       <ObjectId>24661</ObjectId>
@@ -278,7 +278,7 @@ sequence|table|24737|24739|1
     <table id="42" parent="23" name="customers">
       <ObjectId>24682</ObjectId>
       <Owner>shraddhabhadauria</Owner>
-      <StateNumber>587</StateNumber>
+      <StateNumber>619</StateNumber>
     </table>
     <table id="43" parent="23" name="photos">
       <ObjectId>24739</ObjectId>
@@ -320,25 +320,25 @@ sequence|table|24737|24739|1
       <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="38" name="password">
-      <Position>4</Position>
-      <DataType>varchar|0s</DataType>
-      <StateNumber>585</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="51" parent="38" name="created_at">
+    <column id="50" parent="38" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>585</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="52" parent="38" name="updated_at">
+    <column id="51" parent="38" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>585</StateNumber>
       <TypeId>1114</TypeId>
+    </column>
+    <column id="52" parent="38" name="password_digest">
+      <Position>7</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <index id="53" parent="38" name="agents_pkey">
       <ObjectId>24678</ObjectId>
@@ -529,25 +529,25 @@ sequence|table|24737|24739|1
       <StateNumber>586</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="82" parent="42" name="password">
-      <Position>4</Position>
-      <DataType>varchar|0s</DataType>
-      <StateNumber>586</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="83" parent="42" name="created_at">
+    <column id="82" parent="42" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>586</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="84" parent="42" name="updated_at">
+    <column id="83" parent="42" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>586</StateNumber>
       <TypeId>1114</TypeId>
+    </column>
+    <column id="84" parent="42" name="password_digest">
+      <Position>7</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>619</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <index id="85" parent="42" name="customers_pkey">
       <ObjectId>24689</ObjectId>
