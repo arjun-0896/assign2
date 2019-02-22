@@ -29,7 +29,9 @@ class SessionsController < ApplicationController
 
     if params[:session][:state].downcase == "agent"
       user = Agent.find_by(email: params[:session][:email].downcase)
+
       if user && user.password == params[:session][:password_digest]
+
         session[:member_id] = user.id
         session[:email]= user.email
         session[:state] = params[:session][:state].downcase
@@ -44,6 +46,8 @@ class SessionsController < ApplicationController
     if params[:session][:state].downcase == "customer"
       user = Customer.find_by(email: params[:session][:email].downcase)
       if user && user.password == params[:session][:password_digest]
+
+
         session[:member_id] = user.id
         session[:email]= user.email
         session[:state] = params[:session][:state].downcase
