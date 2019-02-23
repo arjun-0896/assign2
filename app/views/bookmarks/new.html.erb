@@ -1,2 +1,11 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<h1>Booking Details</h1>
+
+<% if session[:state] == 'admin' || session[:state] == 'customer' %>
+  <%= render 'form' %>
+  <br />
+
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back','/customeroptions', :style =>'color:#000000;' %>
+  </div>
+
+<% end %>

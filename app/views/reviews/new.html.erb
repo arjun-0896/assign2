@@ -1,7 +1,11 @@
+<h1>Review Details</h1>
 
-<%= render 'form' %>
-<br />
+<% if session[:state] == 'admin' || session[:state] == 'customer' %>
+  <%= render 'form' %>
+  <br />
 
-<div class="btn btn-success topcorner2">
-  <%= link_to 'Back', root_url , :style =>'color:#FFFFFF;' %>
-</div>
+  <div class="btn btn-success topcorner2">
+    <%= link_to 'Back','/customeroptions', :style =>'color:#000000;' %>
+  </div>
+
+<% end %>

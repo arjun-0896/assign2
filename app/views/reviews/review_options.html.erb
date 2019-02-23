@@ -1,0 +1,57 @@
+<h1>Review Options</h1>
+
+<% if session[:state] == 'admin' || session[:state] == 'customer' %>
+
+  <div class = "padding">
+
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Tour Name</th>
+        <th>Subject</th>
+        <th>Body</th>
+        <th>Edit Review</th>
+        <th>Delete Review</th>
+      </tr>
+
+      <% id=0 %>
+      <% @reviews.each do |review| %>
+        <% if (session[:state] == 'customer' && session[:member_id].to_s == review.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == Review.find(review.review_id).agent_id) %>
+          <tr>
+            <td><%= id+=1 %></td>
+            <td><%= Tour.find(review.review_id).name %></td>
+            <td><%= review.subject %></td>
+            <td><%= review.body %></td>
+            <td>
+              <div class="btn btn-success">
+                <%= link_to 'Edit', edit_review_path(review), :style =>'color:#000000;' %>
+              </div>
+            </td>
+            <td>
+              <div class="btn btn-success">
+                <%= link_to 'Delete', review_path(review), method: :delete, :style =>'color:#000000;' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      <%end %>
+    </table>
+
+  </div>
+
+
+  <% if session[:state] == 'admin' %>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
+    </div>
+
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/customeroptions' , :style =>'color:#000000;' %>
+    </div>
+
+  <% end %>
+
+<% end %>

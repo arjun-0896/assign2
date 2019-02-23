@@ -3,6 +3,10 @@ class ReviewsController < ApplicationController
     @reviews=Review.all
   end
 
+  def review_options
+    @reviews=Review.all
+  end
+
   def new
     @review= Review.new
 
@@ -17,9 +21,8 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        # log_in @reviews
         flash[:success] = "Welcome to the Tour management system!"
-        format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Review was successfully created.' }
+        format.html { redirect_to '/reviews', notice: 'Review was successfully created.' }
         format.json { render json: @review, status: :created, location: 'welcome/index' }
       else
         format.html { render action: "new" }
@@ -58,14 +61,14 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.destroy
       flash[:notice] = "Successfully deleted review!"
-      redirect_to root_path
+      redirect_to '/reviews'
     else
       flash[:alert] = "Error deleting review!"
     end
   end
 
   def review_params
-    params.require(:review).permit(:name, :email, :password)
+    params.require(:review).permit(:customer_id, :tour_id, :subject, :body)
   end
 
 end

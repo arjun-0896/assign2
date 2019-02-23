@@ -1,2 +1,56 @@
-<h1>Bookmarks#index</h1>
-<p>Find me in app/views/bookmarks/index.html.erb</p>
+<h1>Bookmarks</h1>
+<% if session[:state] != nil %>
+  <div class = "padding">
+
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Tour Name</th>
+        <th>Customer Name</th>
+        <th>Edit Bookmark</th>
+        <th>Delete Bookmark</th>
+      </tr>
+
+      <% id=0 %>
+      <% @bookmarks.each do |bookmark| %>
+        <% if (session[:state] == 'customer' && session[:member_id].to_s == bookmark.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == Tour.find(bookmark.tour_id).agent_id)%>
+          <tr>
+            <td><%= id+=1 %></td>
+            <td><%= Tour.find(bookmark.tour_id).name %></td>
+            <td><%= Tour.find(bookmark.customer_id).name %></td>
+            <% if (session[:state] == 'customer' && session[:member_id].to_s == bookmark.customer_id) || session[:state] == 'admin'%>
+              <td>
+                <div class="btn btn-success">
+                  <%= link_to 'Edit', edit_bookmark_path(bookmark), :style =>'color:#FFFFFF;' %>
+                </div>
+              </td>
+              <td>
+                <div class="btn btn-success">
+                  <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, :style =>'color:#FFFFFF;' %>
+                </div>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <%end %>
+    </table>
+
+  </div>
+
+
+
+  <% if session[:state] == 'admin' %>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
+    </div>
+
+  <%elsif session[:state] == 'customer'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/customeroptions' , :style =>'color:#000000;' %>
+    </div>
+
+  <% end %>
+
+<% end %>

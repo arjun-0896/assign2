@@ -8,7 +8,7 @@
     <%= f.label :review_id %>
     <%= select("review", "tour_id", Tour.all.collect{ |c| [ c.name, c.id] }) %>
   </div>
-  
+
 
   <div class="field" align="center">
     <%= f.label :subject %><br />
@@ -37,7 +37,7 @@
 
   <br />
   <div class="actions" align="center">
-    <%= f.submit "Create Review" %>
+    <%= f.submit "Update Review" %>
   </div>
 
 
