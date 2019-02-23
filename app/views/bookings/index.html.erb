@@ -13,13 +13,13 @@
 
       <% id=0 %>
       <% @bookings.each do |booking| %>
-        <% if (session[:state] == 'customer' && session[:member_id] == booking.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id] == Tour.find(booking.tour_id).agent_id) %>
+        <% if (session[:state] == 'customer' && session[:member_id].to_s == booking.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == Tour.find(booking.tour_id).agent_id) %>
            <tr>
             <td><%= id+=1 %></td>
             <td><%= booking.customer_id %></td>
             <td><%= Tour.find(booking.tour_id).name %></td>
             <td><%= booking.bseats %></td>
-            <td><%= booking.waitlist %></td>
+            <td><%= booking.bwait_list %></td>
            </tr>
         <% end %>
       <%end %>
@@ -29,7 +29,24 @@
 
 
 
-  <div class="btn btn-success topcorner2">
-    <%= link_to 'Back', '/customeroptions', :style =>'color:#FFFFFF;'%>
-  </div>
+  <% if session[:state] == 'admin' %>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
+    </div>
+
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#000000;' %>
+    </div>
+
+  <%elsif session[:state] == 'customer'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/customeroptions' , :style =>'color:#000000;' %>
+    </div>
+
+  <% end %>
+
 <% end %>

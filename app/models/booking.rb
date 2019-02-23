@@ -14,55 +14,58 @@ class Booking < ApplicationRecord
 
 
   def availability_validity
-    current_tour = Tour.find(tour_id)
 
-    if (:bseats.present? && current_tour.seats < :bseats)
-      errors.add(:expiration_date, "can't be in the past")
+    cseats = 0
+    Booking.all.each do |booking|
+
+      if booking.tour_id == tour_id
+        cseats += booking.bseats
+      end
     end
 
-  end
-
-  def availability_update
-    current_tour = Tour.find(tour_id)
-
-    if (:bseats.present? && current_tour.seats < :bseats)
-      errors.add(:expiration_date, "can't be in the past")
+    if (:bseats.present? && Tour.find(tour_id).seats < cseats)
+      errors.add(:availability, "Seats not available")
     end
 
   end
 
   def update_tour_info
     update_count()
-    update_bookings()
   end
 
   def update_count
-    seats = 0
-    waitlist = 0
+    cseats = 0
+    cwaitlist = 0
 
     Booking.all.each do |booking|
 
+      if booking.tour_id == tour_id
+        cseats += booking.bseats
+        cwaitlist += booking.bwait_list
+      end
+
+      Tour.find(tour_id).update_attribute(:wait_list,cwaitlist)
+    end
+
+    difference = Tour.find(tour_id).seats - cseats
+
+    zerowaitlist = 0
+    uwaitlist = 0
+
+    Booking.all.each do |booking|
       if booking.tour_id == :tour_id
-        seats += booking.bseats
-        waitlist += booking.bwait_list
+
+        if booking.bwait_list < difference
+          useats = booking.bwait_list + booking.bseats
+          difference -= booking.bwait_list
+          Booking.find(booking.tour_id).update_attribute(:bseats, useats)
+          Booking.find(booking.tour_id).update_attribute(:bwait_list, zerowaitlist)
+        end
+        uwaitlist += booking.bwait_list
       end
-      ToursController.setcount(tour_id,seats,waitlist)
-
     end
-  end
+    Tour.find(tour_id).update_attribute(:wait_list,cwaitlist)
 
-  def update_bookings
-
-    Booking.all.each do |booking|
-
-      if booking.tour_id == :tour_id && booking.bwait_list < ToursController.getseats(tour_id)
-
-        booking.bseats += booking.bwait_list
-        booking.bwait_list = 0
-        update_tour_info()
-      end
-
-    end
   end
 
 end

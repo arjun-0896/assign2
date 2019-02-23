@@ -23,8 +23,10 @@
 
   <%= f.hidden_field :customer_id, :value => session[:member_id]%>
 
-  <%= form.label :tour %>
-  <%= select("booking", "tour_id", Tour.all.collect{ |c| [ c.name, c.id] }) %>
+  <div class="field" align="center">
+    <%= f.label :tour_id %>
+    <%= select("booking", "tour_id", Tour.all.collect{ |c| [ c.name, c.id] }) %>
+  </div>
 
 
   <% if @booking.errors.any? %>

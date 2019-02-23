@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
 
 
-  get 'gif/cool'
-  get 'gif/free'
+  # get 'gif/cool'
+  # get 'gif/free'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :bookings
@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
 
   delete '/logout',  to: 'sessions#destroy'
+
+  get '/tour_options',  to: 'tours#tour_options'
+  get '/booking_options',  to: 'bookings#booking_options'
+
   get 'welcome/index'
   root :to => redirect('/welcome/index')
   

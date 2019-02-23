@@ -6,13 +6,13 @@
 <% if session[:state] == 'admin' %>
 
   <div class="btn btn-success topcorner2">
-    <%= link_to 'Back', '/agents' , :style =>'color:#FFFFFF;' %>
+    <%= link_to 'Back', '/agents' , :style =>'color:#000000;' %>
   </div>
 
 <%else%>
 
   <div class="btn btn-success topcorner2">
-    <%= link_to 'Back', agent_path(session[:member_id]) , :style =>'color:#FFFFFF;' %>
+    <%= link_to 'Back', agent_path(session[:member_id]) , :style =>'color:#000000;' %>
   </div>
 
 <% end %>

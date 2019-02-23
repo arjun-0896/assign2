@@ -23,7 +23,7 @@
 
   <%= f.hidden_field :customer_id, :value => session[:member_id]%>
 
-  <%= form.label :tour %>
+  <%= f.label :tour_id %>
   <%= select("booking", "tour_id", Tour.all.collect{ |c| [ c.name, c.id] }) %>
 
 

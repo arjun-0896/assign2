@@ -18,7 +18,7 @@
     <br>
     <button class="btn-success"><%= link_to 'View Bookings', '/bookings', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit/Delete Bookings', '/bookings/booking_options', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Edit/Delete Bookings', booking_options_path, method: :get , :style =>'text-decoration: none;'%></button>
     <br>
 
     <button class="btn-success"><%= link_to 'Create a Review', '/customeroptions', :style =>'text-decoration: none;'%></button>
@@ -35,7 +35,7 @@
     <button class="btn-success"><%= link_to 'Edit/Delete Bookmarks', '/customeroptions', :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"> <%= link_to 'Delete', customer_path(session[:member_id]) , method: :delete, :style =>'text-decoration: none;' %> </button>
+    <button class="btn-success"> <%= link_to 'Delete your account', customer_path(session[:member_id]) , method: :delete, :style =>'text-decoration: none;' %> </button>
     <br>
     <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
 

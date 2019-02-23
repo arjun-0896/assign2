@@ -16,14 +16,13 @@ class AgentsController < ApplicationController
     @agent = Agent.new(agent_params)
     respond_to do |format|
       if @agent.save
-        # log_in @agent
         flash[:success] = "Welcome to the Tour management system!"
         if session[:state] == 'admin'
-          format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Agent was successfully created.' }
-        # format.json { render json: @agent, status: :created, location: @agent }
+          format.html { redirect_to '/options', notice: 'Agent was successfully created' }
+          format.json { render json: @customer, status: :created, location: @customer }
         else
-          format.html { redirect_to '/options', notice: 'Agent was successfully created.' }
-        # format.json { render json: @agent, status: :created, location: @agent }
+          format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Agent was successfully created.' }
+          format.json { render json: @customer, status: :created, location: @customer }
         end
       else
         flash.now[:notice] = "Invalid parameters"

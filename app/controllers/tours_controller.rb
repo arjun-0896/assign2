@@ -58,17 +58,6 @@ class ToursController < ApplicationController
     end
   end
 
-  def setcount(tour_id, nseats, nwaitlist)
-    @tour = Tour.find(tour_id)
-    @tour.seats = nseats
-    @tour.wait_list = nwaitlist
-    end
-
-  def getseats(tour_id)
-    @tour = Tour.find(tour_id)
-    return @tour.seats
-  end
-
 
 
   def destroy

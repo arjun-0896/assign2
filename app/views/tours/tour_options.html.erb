@@ -15,18 +15,18 @@
 
       <% id=0 %>
       <% @tours.each do |tour| %>
-        <% if session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id] == tour.agent_id) %>
+        <% if session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == tour.agent_id) %>
         <tr>
           <td><%= id+=1 %></td>
           <td><%= tour.name %></td>
           <td>
             <div class="btn btn-success">
-              <%= link_to 'Edit', edit_tour_path(tour), :style =>'color:#FFFFFF;' %>
+              <%= link_to 'Edit', edit_tour_path(tour), :style =>'color:#000000;' %>
             </div>
           </td>
           <td>
             <div class="btn btn-success">
-              <%= link_to 'Delete', tour_path(tour), method: :delete, :style =>'color:#FFFFFF;' %>
+              <%= link_to 'Delete', tour_path(tour), method: :delete, :style =>'color:#000000;' %>
             </div>
           </td>
         </tr>
@@ -40,13 +40,13 @@
   <% if session[:state] == 'admin' %>
 
     <div class="btn btn-success ">
-      <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
     </div>
 
   <%elsif session[:state] == 'agent'%>
 
     <div class="btn btn-success ">
-      <%= link_to 'Back', '/agentoptions' , :style =>'color:#FFFFFF;' %>
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#000000;' %>
     </div>
 
   <% end %>

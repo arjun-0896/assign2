@@ -18,10 +18,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @cars = Car.all
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to :controller => 'welcome', :action => 'index', notice: 'Booking was successfully created.' }
+        format.html { redirect_to '/bookings', notice: 'Booking was successfully created.' }
         format.json { render json: @booking, status: :created, location: 'welcome/index' }
       else
         flash.now[:notice] = "Invalid parameters"
@@ -48,7 +47,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.update_attributes(booking_params)
-        format.html { redirect_to @bookings, notice: 'Booking was successfully updated.' }
+        format.html { redirect_to '/bookings', notice: 'Booking was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -58,7 +57,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking.destroy
+    @booking = Booking.find(params[:id])
     if @booking.destroy
       flash[:notice] = "Successfully deleted tour!"
       redirect_to '/bookings'

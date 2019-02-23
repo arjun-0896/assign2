@@ -41,7 +41,7 @@
 
           <td>
             <div class="btn btn-success">
-              <%= link_to 'View photos', '/tours', method: :delete, :style =>'color:#FFFFFF;' %>
+              <%= link_to 'View photos', '/tours', :style =>'color:#FFFFFF;' %>
             </div>
           </td>
         </tr>
@@ -54,19 +54,19 @@
   <% if session[:state] == 'admin' %>
 
     <div class="btn btn-success ">
-      <%= link_to 'Back', '/options' , :style =>'color:#FFFFFF;' %>
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
     </div>
 
   <%elsif session[:state] == 'agent'%>
 
     <div class="btn btn-success ">
-      <%= link_to 'Back', '/agentoptions' , :style =>'color:#FFFFFF;' %>
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#000000;' %>
     </div>
 
   <%elsif session[:state] == 'customer'%>
 
     <div class="btn btn-success ">
-      <%= link_to 'Back', '/customeroptions' , :style =>'color:#FFFFFF;' %>
+      <%= link_to 'Back', '/customeroptions' , :style =>'color:#000000;' %>
     </div>
 
   <% end %>
