@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: arjunsm
+  username: jayaharsha
   password:
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -28,7 +28,7 @@ development:
   encoding: unicode
   database: assign2_development
   pool: 5
-  username: arjunsm
+  username: jayaharsha
   password:
   host: localhost
   port: 5432
@@ -69,7 +69,7 @@ test:
   encoding: unicode
   database: assign2_test
   pool: 5
-  username: arjunsm
+  username: jayaharsha
   password:
   host: localhost
   port: 5432
@@ -99,7 +99,7 @@ production:
   encoding: unicode
   database: assign2_production
   pool: 5
-  username: arjunsm
+  username: jayaharsha
   password:
   host: localhost
   port: 5432
