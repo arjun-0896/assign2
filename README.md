@@ -20,7 +20,26 @@ You can login as either `customer`, `agent` or `admin`. <br/>
     Also, you can login from login console. 
     One demo agent has already been created with following credentials.<br/><br/>
     username : agent1@ncsu.edu<br/>
-    password : agent@123
+    password : agent@123<br/>
+    
+ #### Options
+ Options corresponding to each user is given in respeective pages which displays after respective login
+ 
+ #### Features implemented
+ 1) Login<br/>
+ 2) Signup<br/>
+ 3) Profile<br/>
+ 3) Tours all functions<br/>
+ 4) Booking all functions<br/>
+ 
+ ** Overall flow is done
+ 
+ #### Yet to be done
+ 1) Reviews<br/>
+ 2) Bookmarks<br/>
+ 3) Pictures for tours <br/>
+ 3) Search by itinerary<br/>
+ 4) Testing<br/>
 
 App Link: [App](https://sleepy-brushlands-90006.herokuapp.com)<br/>
 
