@@ -2,7 +2,7 @@
 <h2 align="center">Review Details</h2>
 <%= form_for(@review) do |f| %>
 
-  <%= f.hidden_field :customer, :value => session[:member_id]%>
+  <%= f.hidden_field :customer_id, :value => session[:member_id]%>
 
   <div class="field" align="center">
     <%= f.label :review_id %>
@@ -12,7 +12,7 @@
 
   <div class="field" align="center">
     <%= f.label :subject %><br />
-    <%= f.text_field :subject, :value => "0"%>
+    <%= f.text_field :subject%>
   </div>
   <br>
 

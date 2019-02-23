@@ -7,8 +7,10 @@
         <th>S.No</th>
         <th>Tour Name</th>
         <th>Customer Name</th>
-        <th>Edit Bookmark</th>
-        <th>Delete Bookmark</th>
+        <% if session[:state] == 'customer' || session[:state] == 'admin' %>
+          <th>Edit Bookmark</th>
+          <th>Delete Bookmark</th>
+        <% end %>
       </tr>
 
       <% id=0 %>
@@ -17,7 +19,7 @@
           <tr>
             <td><%= id+=1 %></td>
             <td><%= Tour.find(bookmark.tour_id).name %></td>
-            <td><%= Tour.find(bookmark.customer_id).name %></td>
+            <td><%= Customer.find(bookmark.customer_id).name %></td>
             <% if (session[:state] == 'customer' && session[:member_id].to_s == bookmark.customer_id) || session[:state] == 'admin'%>
               <td>
                 <div class="btn btn-success">
@@ -45,6 +47,12 @@
       <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
     </div>
 
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#000000;' %>
+    </div>
+
   <%elsif session[:state] == 'customer'%>
 
     <div class="btn btn-success ">
@@ -52,5 +60,6 @@
     </div>
 
   <% end %>
+
 
 <% end %>

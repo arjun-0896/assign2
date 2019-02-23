@@ -19,7 +19,7 @@
         <% if (session[:state] == 'customer' && session[:member_id].to_s == review.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == Review.find(review.review_id).agent_id) %>
           <tr>
             <td><%= id+=1 %></td>
-            <td><%= Tour.find(review.review_id).name %></td>
+            <td><%= Tour.find(review.tour_id).name %></td>
             <td><%= review.subject %></td>
             <td><%= review.body %></td>
             <td>

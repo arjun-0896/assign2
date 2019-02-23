@@ -16,7 +16,7 @@
         <% if (session[:state] == 'customer' && session[:member_id].to_s == booking.customer_id) || session[:state] == 'admin' || (session[:state] == 'agent' && session[:member_id].to_s == Tour.find(booking.tour_id).agent_id) %>
            <tr>
             <td><%= id+=1 %></td>
-            <td><%= Customer.find(review.customer_id).name %></td>
+            <td><%= Customer.find(booking.customer_id).name %></td>
             <td><%= Tour.find(booking.tour_id).name %></td>
             <td><%= booking.bseats %></td>
             <td><%= booking.bwait_list %></td>

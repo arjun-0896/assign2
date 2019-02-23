@@ -21,19 +21,18 @@
     <button class="btn-success"><%= link_to 'Edit/Delete Bookings', booking_options_path, method: :get , :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"><%= link_to 'Create a Review', '/customeroptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Create a Review', '/reviews/new', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View Reviews', '/customeroptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'View Reviews', '/reviews', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit/Delete Reviews', '/customeroptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Edit/Delete Reviews', review_options_path, method: :get , :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"><%= link_to 'Create a Bookmark', '/customeroptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Create a Bookmark', '/bookmarks/new', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'View Bookmarks', '/customeroptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to ' Bookmarks ', '/bookmarks', :style =>'text-decoration: none;'%></button>
     <br>
-    <button class="btn-success"><%= link_to 'Edit/Delete Bookmarks', '/customeroptions', :style =>'text-decoration: none;'%></button>
-    <br>
+
 
     <button class="btn-success"> <%= link_to 'Delete your account', customer_path(session[:member_id]) , method: :delete, :style =>'text-decoration: none;' %> </button>
     <br>

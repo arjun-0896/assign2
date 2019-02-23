@@ -19,13 +19,13 @@
     <button class="btn-success"><%= link_to 'Update/Delete your pictures', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"><%= link_to 'View bookmarks your tours', '/agentoptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'View bookmarks your tours', '/bookmarks', :style =>'text-decoration: none;'%></button>
     <br>
 
     <button class="btn-success"><%= link_to 'View bookings your tours', '/bookings', :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"><%= link_to 'View reviews of your tour', '/agentoptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'View reviews of your tour', '/reviews', :style =>'text-decoration: none;'%></button>
     <br>
 
     <button class="btn-success"><%= link_to 'Delete your account',agent_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>

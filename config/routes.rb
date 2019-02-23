@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get '/tour_options',  to: 'tours#tour_options'
   get '/booking_options',  to: 'bookings#booking_options'
+  get '/review_options',  to: 'reviews#review_options'
 
   get 'welcome/index'
   root :to => redirect('/welcome/index')
