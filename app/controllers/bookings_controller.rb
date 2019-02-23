@@ -59,10 +59,10 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy
-      flash[:notice] = "Successfully deleted tour!"
+      flash[:notice] = "Successfully deleted booking!"
       redirect_to '/bookings'
     else
-      flash[:alert] = "Error deleting tour!"
+      flash[:alert] = "Error deleting booking!"
     end
   end
 
