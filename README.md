@@ -23,7 +23,7 @@ You can login as either `customer`, `agent` or `admin`. <br/>
     password : agent@123<br/>
     
  #### Options
- Options corresponding to each user is given in respeective pages which displays after respective login
+ Options corresponding to each user is given in respective pages which displays after respective login
  
  #### Features implemented
  1) Login<br/>
