@@ -5,7 +5,7 @@ You can login as either `customer`, `agent` or `admin`. <br/>
 <br/>
 #### Admin
 1. Username : admin@ncsu.edu<br/>
-   Password : team<br/><br/> (Quite confidential)
+   Password : team (Quite confidential :p) <br/><br/>
    Once you login, you shall be able to see various options such as `creating agent account`, `creating customer account`, etc.<br/><br/>
    
 #### Customer
