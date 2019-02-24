@@ -39,6 +39,13 @@
     <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
 
   </div>
+
+  <% if session[:state] == 'admin' %>
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
+    </div>
+  <% end %>
+
 </head>
 <body>
 

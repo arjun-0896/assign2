@@ -7,12 +7,19 @@
     <button class="btn-success"><%= link_to 'Create Agent Account', '/agents/new', :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'Create Customer account', '/customers/new', :style =>'text-decoration: none;'%></button>
+
     <br>
     <button class="btn-success"><%= link_to 'List all customers', '/customers', :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'List all agents', '/agents', :style =>'text-decoration: none;'%></button>
+
     <br>
     <button class="btn-success"><%= link_to 'List all tours', '/tours', :style =>'text-decoration: none;'%></button>
+
+    <br>
+    <button class="btn-success"><%= link_to 'Go to agent options', '/agentoptions', :style =>'text-decoration: none;'%></button>
+    <br>
+    <button class="btn-success"><%= link_to 'Go to customer options', '/customeroptions', :style =>'text-decoration: none;'%></button>
     <br>
     <br>
     <button class="btn-success"><%= link_to 'Logout', logout_path(session[:member_id]), method: :delete, :style =>'text-decoration: none;'%></button>
