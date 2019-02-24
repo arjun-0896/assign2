@@ -32,6 +32,8 @@ You can login as either `customer`, `agent` or `admin`. <br/>
  3) Tours all functions<br/>
  4) Booking all functions<br/>
  
+ In the bookings part, it will show error if u book seats more than available. So, you have to check availability in tours page and provide the seats. Additional seats required must be provided in the waitlist field. A weird design, but yeah :p Will try to improve in the next submission
+ 
  ** Overall flow is done
  
  #### Yet to be done
@@ -40,6 +42,11 @@ You can login as either `customer`, `agent` or `admin`. <br/>
  3) Pictures for tours <br/>
  3) Search by itinerary<br/>
  4) Testing<br/>
+ 
+ #### Flaws identified as of now
+ 
+ 1) In the bookings part, it will show error if u book seats more than available. So, you have to check availability in tours page and provide the seats. Additional seats required must be provided in the waitlist field. A weird design, but yeah :p Will try to improve in the next submission <br/>
+ 2) Admin has no link in the user interface to reach the options page of customers and agents, though he can perform those options when he hits the url of the respective controllers. Will provide in the next submission
 
 App Link: [App](https://sleepy-brushlands-90006.herokuapp.com)<br/>
 
