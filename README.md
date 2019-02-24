@@ -9,16 +9,12 @@ You can login as either `customer`, `agent` or `admin`. <br/>
    Once you login, you shall be able to see various options such as `creating agent account`, `creating customer account`, etc.<br/><br/>
    
 #### Customer
-1. You can create a new customer through `customer sign up`.
-   Also, you can login from login console. 
-   One demo customer has already been created with following credentials.<br/><br/>
+1. A demo customer has been created with following credentials.(Feel free to create a new one)<br/><br/>
    username : customer1@ncsu.edu<br/>
    password : 12345678<br/>
    <br/>
  #### Agent 
- 1. You can create a new customer through `Agent sign up`.
-    Also, you can login from login console. 
-    One demo agent has already been created with following credentials.<br/><br/>
+ 1. A demo agent has been created with following credentials.(Feel free to create a new one)<br/><br/>
     username : agent1@ncsu.edu<br/>
     password : agent@123<br/>
     
