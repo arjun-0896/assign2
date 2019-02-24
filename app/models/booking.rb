@@ -24,9 +24,11 @@ class Booking < ApplicationRecord
     end
 
     cseats += bseats
+    diff = cseats - Tour.find(tour_id).seats
 
-    if (Tour.find(tour_id).seats < cseats)
-      errors.add(:availability, "Requested seats not available")
+    if (diff > 0)
+      errors.add(:sorry, "The Tour has #{diff} seats shorter than your request !")
+      errors.add(:but, "You can add the addtional seats in waitlist ! You will be notified if it gets confirmed :)")
     end
 
   end
