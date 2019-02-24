@@ -9,17 +9,17 @@ You can login as either `customer`, `agent` or `admin`. <br/>
    Once you login, you shall be able to see various options such as `creating agent account`, `creating customer account`, etc.<br/><br/>
    
 #### Customer
-1. A demo customer has been created with following credentials.(Feel free to create a new one)<br/><br/>
+1. A demo customer has been created with the following credentials.(Feel free to create a new one)<br/><br/>
    username : customer1@ncsu.edu<br/>
    password : 12345678<br/>
    <br/>
  #### Agent 
- 1. A demo agent has been created with following credentials.(Feel free to create a new one)<br/><br/>
+ 1. A demo agent has been created with the following credentials.(Feel free to create a new one)<br/><br/>
     username : agent1@ncsu.edu<br/>
     password : agent@123<br/>
     
  #### Options
- Options corresponding to each user is given in respective pages which displays after respective login
+ Options corresponding to each user is given in the respective pages which displays after respective login
  
  #### Features implemented
  1) Login<br/>
@@ -27,8 +27,6 @@ You can login as either `customer`, `agent` or `admin`. <br/>
  3) Profile<br/>
  3) Tours all functions<br/>
  4) Booking all functions<br/>
- 
- In the bookings part, it will show error if u book seats more than available. So, you have to check availability in tours page and provide the seats. Additional seats required must be provided in the waitlist field. A weird design, but yeah :p Will try to improve in the next submission
  
  ** Overall flow is done
  
