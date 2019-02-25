@@ -1,12 +1,30 @@
 class ToursController < ApplicationController
+
   def index
     @tours=Tour.all
+    @tours.each do |tour|
+      if tour.to_date < Date.today
+        tour.status = "Completed"
+
+      elsif tour.from_date < Date.today
+        tour.status = "InProgress"
+      end
+
+    end
   end
 
   def tour_options
     @tours=Tour.all
-  end
+    @tours.each do |tour|
+      if tour.to_date < Date.today
+        tour.status = "Completed"
 
+      elsif tour.from_date < Date.today
+        tour.status = "InProgress"
+      end
+
+    end
+  end
   def new
     @tour= Tour.new
 

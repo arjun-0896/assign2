@@ -15,7 +15,7 @@ class Tour < ApplicationRecord
   validates :contact_agent, presence: true
   validates :seats, presence: true, numericality: true
   validates :wait_list, presence: true, numericality: true
-  validates :status, presence:true, inclusion: { in: %w(InFuture Completed Cancelled)}
+  validates :status, presence:true, inclusion: { in: %w(Future Completed InProgress)}
   validates :agent_id, presence: true
 
   def booking_date_validity

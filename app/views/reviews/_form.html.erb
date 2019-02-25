@@ -5,7 +5,7 @@
   <%= f.hidden_field :customer_id, :value => session[:member_id]%>
 
   <div class="field" align="center">
-    <%= f.label :review_id %>
+    <%= f.label :tour %>
     <%= select("review", "tour_id", Tour.all.collect{ |c| [ c.name, c.id] }) %>
   </div>
   
