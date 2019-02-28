@@ -17,6 +17,7 @@ class Tour < ApplicationRecord
   validates :wait_list, presence: true, numericality: true
   validates :status, presence:true, inclusion: { in: %w(Future Completed InProgress)}
   validates :agent_id, presence: true
+  mount_uploader :photo, PhotoUploader
 
   def booking_date_validity
     if (:booking_deadline.present? && :booking_deadline < Date.today)
