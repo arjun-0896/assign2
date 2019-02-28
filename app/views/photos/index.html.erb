@@ -1,13 +1,43 @@
+<div class="page-header"><h1>Photos</h1></div>
+
+<div class="media">
+  <table align="center">
+    <tr>
+      <td><h4>Tour Id</h4></td>
+      <td><h4>Photo</h4></td>
+    </tr>
+      <% @photo.each do |photo| %>
+      <tr>
+        <td>
+          <%= photo.tour_id %>
+        </td>
+        <td>
+          <!-- Renders image -->
+          <%= render photo %>
+        </td>
+     </tr>
+    <% end %>
+  </table>
+</div>
+</table>
+<div class="field" align="center">
+  <%= link_to 'Back', '/agentoptions', :style =>'text-decoration: none;' %>
+</div>
+
+
+<!--
 <div class="page-header"><h1>Upload Photo</h1></div>
 
 <div class="media">
   <% @photos.each do |photo| %>
     <div class="media-left">
       <!-- Renders image -->
-      <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
+ <!--    
+<%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
     </div>
     <div class="media-body">
       <h4 class="media-heading"><%= photo.tour_id %></h4>
     </div>
   <% end %>
 </div>
+-->
