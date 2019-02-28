@@ -1,0 +1,49 @@
+<h1>Photo Options</h1>
+
+    <% if session[:state] == 'admin' || session[:state] == 'agent' %>
+
+      <div class = "padding">
+
+        <table>
+          <tr>
+            <th>S.No</th>
+            <th>Tour Name</th>
+            <th>Photo</th>
+            <th>Delete Photo</th>
+          </tr>
+
+          <% id=0 %>
+          <% @photo.each do |photo| %>
+            <% if (session[:state] == 'admin') || (session[:state] == 'agent') %>
+              <tr>
+                <td><%= id+=1 %></td>
+                <td><%= Tour.find(photo.tour_id).name %></td>
+                <td><%= render photo %></td>
+                <td>
+                  <div class="btn btn-success">
+                    <%= link_to 'Delete', photo_path(photo), method: :delete, :style =>'color:#000000;' %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <%end %>
+        </table>
+      </div>
+    <%end %>
+
+
+
+  <% if session[:state] == 'admin' %>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/options' , :style =>'color:#000000;' %>
+    </div>
+
+  <%elsif session[:state] == 'agent'%>
+
+    <div class="btn btn-success ">
+      <%= link_to 'Back', '/agentoptions' , :style =>'color:#000000;' %>
+    </div>
+
+  <% end %>
+
