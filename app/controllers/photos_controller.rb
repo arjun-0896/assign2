@@ -21,15 +21,25 @@ class PhotosController < ApplicationController
     end
   end
 
+ 
   def destroy
     @photo = Photo.find(params[:id])
     if @photo.destroy
       flash[:notice] = "Successfully deleted photo!"
-      redirect_to root_path
+      redirect_to '/photooptions'
     else
       flash[:alert] = "Error deleting photo!"
     end
   end
+  #def destroy
+  #  @photo = Photo.find(params[:id])
+  #  if @photo.destroy
+  #    flash[:notice] = "Successfully deleted photo!"
+  #    redirect_to root_path
+  #  else
+  #    flash[:alert] = "Error deleting photo!"
+  #  end
+  #end
 
   private
 
