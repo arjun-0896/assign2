@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.order('created_at')
+    @photo = Photo.order('created_at')
   end
 
   #New action for creating a new photo
