@@ -12,12 +12,19 @@
     <button class="btn-success"><%= link_to 'Update/Delete your Tours',tour_options_path, method: :get , :style =>'text-decoration: none;'%></button>
     <br>
 
-    <button class="btn-success"><%= link_to 'Add a Picture', '/agentoptions', :style =>'text-decoration: none;'%></button>
+    <button class="btn-success"><%= link_to 'Add a Picture', '/photos/new', :style =>'text-decoration: none;'%></button>
+    <br>
+    <button class="btn-success"><%= link_to 'View all pictures', '/photos', :style =>'text-decoration: none;'%></button>
+    <br>
+    <button class="btn-success"><%= link_to 'Delete your pictures', photooptions_path, :style =>'text-decoration: none;'%></button>
+    <br>
+  <!--  <button class="btn-success"><%= link_to 'Add a Picture', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'View all pictures', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
     <button class="btn-success"><%= link_to 'Delete your pictures', '/agentoptions', :style =>'text-decoration: none;'%></button>
     <br>
+-->
 
     <button class="btn-success"><%= link_to 'View bookmarks your tours', '/bookmarks', :style =>'text-decoration: none;'%></button>
     <br>
