@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :searches
   # get 'gif/cool'
   # get 'gif/free'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -19,8 +20,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :photos
   resources :new_photo_path
-
-
+  resources :searches
 
   delete '/logout',  to: 'sessions#destroy'
 
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get '/booking_options',  to: 'bookings#booking_options'
   get '/review_options',  to: 'reviews#review_options'
   get '/photooptions', to: 'photooptions#index'
-
+  get '/showtourimage', to: 'photos#show'
   get 'welcome/index'
   root :to => redirect('/welcome/index')
   
