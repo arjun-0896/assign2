@@ -21,7 +21,16 @@ class PhotosController < ApplicationController
     end
   end
 
- 
+  def show
+    @photo = Photo.all.select{ |c| c.tour_id.to_i == params[:tour].to_i}
+    puts "*************************************", @photo, params[:tour]
+    respond_to do |format|
+
+      format.html # show.html.erb
+      format.json { render json: @photo }
+    end
+  end
+
   def destroy
     @photo = Photo.find(params[:id])
     if @photo.destroy
