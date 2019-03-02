@@ -1,8 +1,9 @@
 <%= form_for @photo, html: { multipart: true } do |f| %>
   <%= f.hidden_field :tour_id, :value => session[:member_id]%>
 
-  <%selected_tours = []%>
-  <%selected_tours = Tour.all.select{ |c| c.agent_id == session[:member_id]} %>
+  <%#selected_tours = []%>
+  <%selected_tours = Tour.all.select{ |c| c.agent_id.to_i == session[:member_id]} %>
+
   <% if selected_tours != nil %>
     <%= select("photo", "tour_id", (selected_tours).collect{ |c| [ c.name, c.id] }) %>
   <%else %>
