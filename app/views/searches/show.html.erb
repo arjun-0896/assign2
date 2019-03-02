@@ -1,0 +1,47 @@
+<h3>Tours Search Results</h3>
+
+<% if @search.search_tours.empty? %>
+  <p>No Tours Found</p>
+<% else %>
+  <table class = "table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Booking Deadline</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Start Location</th>
+      <th>Itinerary</th>
+      <th>Contact Agent</th>
+      <th>Seats</th>
+      <th>Waitlist</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @search.search_tours.each do |t| %>
+      <tr>
+        <td><%= t.name %></td>
+        <td><%= t.description %></td>
+        <td><%= t.price %></td>
+        <td><%= t.booking_deadline %></td>
+        <td><%= t.from_date %></td>
+        <td><%= t.to_date%></td>
+        <td><%= t.start_location %></td>
+        <td><%= t.itinerary %></td>
+        <td><%= t.contact_agent %></td>
+        <td><%= t.seats %></td>
+        <td><%= t.wait_list %></td>
+        <td><%= t.status %></td>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<%end%>
+<br>
+<br>
+<%= link_to 'Back', home_index_path %>

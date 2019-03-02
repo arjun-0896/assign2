@@ -6,7 +6,7 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>arjunsm</user-name>
+      <user-name>jayaharsha</user-name>
       <introspection-schemas>@:@|assign2_development:</introspection-schemas>
     </data-source>
     <data-source name="Rails assign2: production" uuid="37e4474a-65b3-4254-9e08-6ef2ec25ca4b">
