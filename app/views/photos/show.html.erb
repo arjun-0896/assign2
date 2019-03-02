@@ -1,6 +1,11 @@
+
 <div class="field" align="center">
   <!-- Brand and toggle get grouped for better mobile display -->
 
-  <%= link_to 'Upload New Image', new_photo_path %><br/>
-  <%= link_to 'Back', agent_path, :style =>'text-decoration: none;' %></div>
+  <% @photo.each do |photo| %>
+    <!-- Renders image -->
+        <%= render photo %>
+    <%end %>
+
+  <%= link_to 'Back', tours_path, :style =>'text-decoration: none;' %></div>
 </div>
